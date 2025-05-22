@@ -273,3 +273,315 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/*
+  Enhanced Destination Cards Section Styles
+  Modern, beginner-friendly, and mobile-first. Uses Google Fonts and Font Awesome icons.
+*/
+
+body {
+  font-family: 'Poppins', 'Montserrat', Arial, sans-serif; /* Use Google Fonts */
+  background: #f4f7fa;
+  color: #222;
+  margin: 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0 20px 0;
+}
+
+.divider-icon {
+  font-size: 2em;
+  color: #43a047;
+}
+
+.destinations {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(67,160,71,0.07);
+  padding: 32px 12px;
+  max-width: 1200px;
+  margin: 32px auto;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  background: #f9fbe7;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(67,160,71,0.08);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 8px 24px rgba(67,160,71,0.15);
+}
+
+.card-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.06);
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #43a047;
+  color: #fff;
+  font-size: 0.95em;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(67,160,71,0.12);
+}
+
+.card-content {
+  padding: 22px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.tag {
+  background: #e0f2f1;
+  color: #00796b;
+  font-size: 0.85em;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.card-content h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.25em;
+  color: #388e3c;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1em;
+  color: #fbc02d;
+}
+
+.stars {
+  letter-spacing: 1px;
+}
+
+.reviews {
+  color: #888;
+  font-size: 0.95em;
+}
+
+.card-content p {
+  color: #444;
+  font-size: 1em;
+  margin: 0 0 10px 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-btn {
+  display: inline-block;
+  background: #43a047;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.card-btn i {
+  margin-left: 6px;
+}
+
+.card-btn:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}
+
+.card-price {
+  color: #388e3c;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+/* Enhanced CTA Section */
+.cta {
+  position: relative;
+  background: linear-gradient(135deg, #43a047 60%, #1de9b6 100%);
+  color: #fff;
+  text-align: center;
+  padding: 56px 16px 64px 16px;
+  margin: 40px 0 0 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cta-background {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 2em;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.cta p {
+  margin-bottom: 28px;
+  font-size: 1.1em;
+  opacity: 0.95;
+}
+
+.cta-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+  color: #fffde7;
+}
+
+.feature-icon {
+  font-size: 1.3em;
+  color: #fffde7;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #fff;
+  color: #43a047;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+  margin-top: 18px;
+  box-shadow: 0 2px 8px rgba(67,160,71,0.10);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.cta-btn i {
+  margin-left: 8px;
+}
+
+.cta-btn.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(67,160,71,0.2); }
+  70% { box-shadow: 0 0 0 10px rgba(67,160,71,0); }
+  100% { box-shadow: 0 0 0 0 rgba(67,160,71,0); }
+}
+
+.cta-btn:hover {
+  background: #e0f2f1;
+  color: #388e3c;
+  transform: scale(1.06);
+}
+
+.cta-note {
+  margin-top: 18px;
+  font-size: 1em;
+  color: #fffde7;
+  opacity: 0.95;
+}
+
+/* Responsive Design for Enhanced Sections */
+@media (min-width: 600px) {
+  .card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    min-width: 280px;
+    max-width: 350px;
+    flex: 1;
+  }
+  .cta-features {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .destinations {
+    padding: 48px 32px;
+  }
+  .card-image {
+    height: 220px;
+  }
+  .cta {
+    padding: 80px 32px 90px 32px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
