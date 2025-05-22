@@ -63,120 +63,147 @@
   margin: 0 auto;                 /* Center paragraph horizontally */
 }
 
-/*
-  Destination cards section: responsive cards with images, headline, and button.
-  Mobile-first, simple Flexbox layout for beginners.
+/* 
+  Destination Cards Section Styles
+  Mobile-first: cards stack vertically on small screens
 */
 .destinations {
-  background: #f9fbe7;              /* Light green background */
-  padding: 40px 16px;
+  padding: 24px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destinations h2 {
   text-align: center;
-  margin: 32px 0;
-  border-radius: 8px;
+  margin-bottom: 16px;
+  color: #333;
 }
 
 .section-intro {
-  max-width: 600px;
-  margin: 0 auto 32px auto;
-  font-size: 1.1em;
-  color: #4a6c3b;
+  text-align: center;
+  margin-bottom: 32px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #666;
 }
 
 .card-container {
   display: flex;
-  flex-direction: column;           /* Stack cards vertically on mobile */
-  gap: 24px;                        /* Space between cards */
-  align-items: center;
+  flex-direction: column;  /* Stack cards vertically on mobile */
+  gap: 24px;              /* Space between cards */
 }
 
 .card {
-  background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  max-width: 350px;
-  width: 100%;
+  overflow: hidden;       /* Ensures image doesn't overflow rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  height: 200px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .card-image img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
+  height: 100%;
+  object-fit: cover;     /* Ensures image covers area without distortion */
+  transition: transform 0.5s;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
 }
 
 .card-content {
-  padding: 20px 16px 24px 16px;
+  padding: 20px;
 }
 
 .card-content h3 {
   margin-top: 0;
   margin-bottom: 12px;
-  color: #388e3c;
+  color: #333;
 }
 
 .card-content p {
-  font-size: 1em;
-  margin-bottom: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 .card-btn {
   display: inline-block;
-  background: #388e3c;
-  color: #fff;
-  padding: 8px 20px;
-  border-radius: 4px;
+  padding: 8px 16px;
+  background-color: #4CAF50;  /* Green button for eco theme */
+  color: white;
   text-decoration: none;
-  font-size: 1em;
-  transition: background 0.2s;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .card-btn:hover {
-  background: #256029;
+  background-color: #3e8e41;
 }
 
-/*
-  Call-to-Action (CTA) section: centered, with a button.
+/* 
+  Call-to-Action Section Styles
+  Mobile-first with centered content
 */
 .cta {
-  background: #fffde7;              /* Soft yellow background */
-  padding: 40px 16px;
+  background: linear-gradient(135deg, #43a047, #1de9b6);
+  color: white;
   text-align: center;
+  padding: 48px 16px;
   margin: 32px 0;
   border-radius: 8px;
 }
 
-.cta-content h2 {
-  margin-top: 0;
-  margin-bottom: 16px;
-  color: #f9a825;
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.cta-content p {
+.cta h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.8em;
+}
+
+.cta p {
+  margin-bottom: 32px;
   font-size: 1.1em;
-  margin-bottom: 20px;
+  opacity: 0.9;
 }
 
 .cta-btn {
   display: inline-block;
-  background: #f9a825;
-  color: #fff;
-  padding: 10px 28px;
-  border-radius: 4px;
+  padding: 12px 24px;
+  background-color: white;
+  color: #43a047;
   text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
   font-size: 1.1em;
-  transition: background 0.2s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .cta-btn:hover {
-  background: #c17900;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/*
-  On screens 600px and wider, show nav links in a row (desktop/tablet)
+/* 
+  Responsive Design: Media Queries
+  For screens 600px and wider, adjust layout for tablet/desktop
 */
 @media (min-width: 600px) {
   .site-header {
@@ -198,14 +225,51 @@
   .hero h2 {
     font-size: 2.5em;             /* Even larger headline on desktop */
   }
+  .destinations {
+    padding: 32px 24px;
+  }
+  
+  .card-container {
+    flex-direction: row;    /* Display cards horizontally on larger screens */
+    flex-wrap: wrap;        /* Allow wrapping if needed */
+    justify-content: center;
+  }
+  
+  .card {
+    flex: 1;                /* Cards grow to fill space */
+    min-width: 280px;       /* Minimum width for each card */
+    max-width: 350px;       /* Maximum width for each card */
+  }
+  
+  .cta {
+    padding: 64px 32px;
+  }
+  
+  .cta h2 {
+    font-size: 2.2em;
+  }
 }
 
-/*
-  On screens 800px and wider, show cards in a row.
-*/
+/* For even larger screens (desktop) */
 @media (min-width: 800px) {
   .card-container {
     flex-direction: row;            /* Cards side by side on desktop */
     justify-content: center;
   }
+}
+
+@media (min-width: 900px) {
+  .destinations {
+    padding: 48px 32px;
+  }
+  
+  .card-image {
+    height: 220px;  /* Slightly taller images on desktop */
+  }
+}
+
+/* General responsive image rule */
+img {
+  max-width: 100%;
+  height: auto;
 }
